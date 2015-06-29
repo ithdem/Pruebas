@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="app1">
+
+  <head>
+    <link data-require="bootstrap-css@3.0.3" data-semver="3.0.3" rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" />
+    
+    <script data-require="jquery@*" data-semver="2.0.3" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script data-require="angular.js@1.2.9" data-semver="1.2.9" src="http://code.angularjs.org/1.2.9/angular.js"></script>
+
+    <script data-require="bootstrap@3.0.3" data-semver="3.0.3" src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script data-require="angular-ui-bootstrap@0.9.0" data-semver="0.9.0" src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.9.0.min.js"></script>
+    
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+
+  <body ng-controller="ctrl1">
+    
+    <form name="myForm" novalidate >
+      
+      <div class="form-group">
+        <label>Input 1 *</label>
+        <input 
+          class="span2" 
+          name="input1id" 
+          type="text" 
+          ng-model="input1" 
+          required 
+          tooltip="You have an error with this field" 
+          tooltip-placement="bottom"
+          tooltip-trigger="{{{true: 'focus', false: 'never'}[myForm.input1id.$invalid]}}"
+        />
+        <pre>Input 1 is invalid: {{myForm.input1id.$invalid}}</pre>
+      </div>
+      
+    </form>
+  </body>
+</html>
